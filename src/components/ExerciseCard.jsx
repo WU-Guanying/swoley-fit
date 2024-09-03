@@ -20,10 +20,12 @@ export default function ExerciseCard(props) {
             max-w-full text-lg sm:text-xl md:text-2xl flex-1 md:text-center'>{exercise.name.replaceAll("_"," ")}</h2>
             <p className='text-sm text-slate-400 capitalize'>{exercise.type}</p>
         </div>
+
         <div className='flex flex-col'>
             <h3 className='text-slate-400 text-sm'>Muscel Groups</h3>
             <p className=''>{exercise.muscles.join(' & ')}</p>
         </div>
+
         <div className='flex flex-col bg-slate-950 rounded gap-2'>
             {exercise.description.split('___').map((val) => {
                 return (
@@ -33,6 +35,7 @@ export default function ExerciseCard(props) {
                 )
             })}
         </div>
+
         <div className='grid grid-cols-1 sm:grid-cols-4 sm:place-items-center gap-2'>
             {['reps','rest','tempo'].map(info=>{
                 return (
@@ -44,11 +47,11 @@ export default function ExerciseCard(props) {
                      </div>
                 )
             })}
-        <button onClick={handleSetIncrement} className='flex flex-col p-2 rounded border-[1px]
-        border-solid border-blue-900 hover:border-blue-600 w-full duration-200'>
-            <h3 className='text-slate-400 text-sm capitalize'>Sets Completed</h3>
-            <p className='font-medium'>{setCompleted}/5</p>
-        </button>
+            <button onClick={handleSetIncrement} className='flex flex-col p-2 rounded border-[1px]
+            border-solid border-blue-900 hover:border-blue-600 w-full duration-200'>
+                <h3 className='text-slate-400 text-sm capitalize'>Sets Completed</h3>
+                <p className='font-medium'>{setCompleted}/5</p>
+            </button>
         </div>
     </div>
   )
