@@ -13,6 +13,7 @@ export function generateWorkout(args) {
         listOfMuscles = muscles;
     } else {
         listOfMuscles = WORKOUTS[workout][muscles[0]];
+        
     }
 
     listOfMuscles = new Set(shuffleArray(listOfMuscles));
