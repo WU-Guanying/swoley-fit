@@ -64,6 +64,8 @@ export function generateWorkout(args) {
             },
             { compound: {}, accessory: {} }
         );
+        // 第一个 [exercises[curr].type]：动态地确定新的对象中哪个属性键需要更新或创建（例如 "compound" 或 "accessory"）。
+        // 第二个 [exercises[curr].type]：展开现有的属性值（例如 "compound" 或 "accessory" 下的内容），确保添加新内容时，保留旧内容。        
 
     const genWOD = sets.map(({ setType, muscleGroup }) => {
         const data =
@@ -171,3 +173,11 @@ function exercisesFlattener(exercisesObj) {
     }
     return flattenedObj
 }
+
+// [
+//     { setType: "compound", muscleGroup: "chest" },
+//     { setType: "compound", muscleGroup: "back" },
+//     { setType: "compound", muscleGroup: "legs" },
+//     { setType: "accessory", muscleGroup: "chest" },
+//     { setType: "accessory", muscleGroup: "back" }
+//   ]
